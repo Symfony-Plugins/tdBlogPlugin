@@ -1,0 +1,29 @@
+options:
+  collate: utf8_general_ci
+  charset: utf8
+
+tdArticle:
+  actAs:
+    Timestampable: ~
+  columns:
+    title:
+      type: string(128)
+      notnull: true
+    author_id:
+      type: integer(4)
+      notnull: true
+    text:
+      type: clob
+      notnull: true
+    image:
+      type: string(255)
+    active:
+      type: boolean
+      notnull: true
+      default: true
+  relations:
+    Author:
+      class: sfGuardUser
+      local: author_id
+      foreign: id
+      foreignAlias: Articles

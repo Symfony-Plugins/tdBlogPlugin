@@ -1,0 +1,12 @@
+td_sample_aticle:
+  url:   /sample-article
+  param: { module: tdSampleArticle, action: index }
+
+td_article:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                tdArticle
+    module:               td_article
+    prefix_path:          /td_article
+    column:               id
+    with_wildcard_routes: true

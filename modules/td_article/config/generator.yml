@@ -1,0 +1,76 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           tdArticle
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          td_article
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+    css:                   nothing
+    i18n_catalogue:        sf_admin
+
+    config:
+      actions: ~
+      fields:
+        author_id:
+          label: Autor
+        title:
+          label: Tytuł
+        text:
+          label: Treść
+        text_short:
+          label: Treść
+        image:
+          label: Zdjęcie
+        active:
+          label: Aktywny
+          help: if the link shall be visible on the frontend website
+        created_at:
+          label: Utworzono
+        updated_at:
+          label: Zmieniono
+      list:
+        title: Article list
+        batch_actions:
+          _delete: ~
+          activate: ~
+          deactivate: ~
+        object_actions:
+          _edit: ~
+          _delete: ~
+          activate: ~
+          deactivate: ~
+        display: [ active, title, author, text, created_at, updated_at ]
+        max_per_page: 10
+        layout: stacked
+        params: |
+          <div style="text-align: justify">
+            <img src="/uploads/articles/%%image%%" class="border" />
+            <br />
+            <strong>autor</strong>: %%author%%
+            <br />
+            <strong>tytuł</strong>: %%title%%
+            <br />
+            <strong>treść</strong>: %%text_short%%
+            <br />
+            <strong>utworzono</strong>: %%created_at%%
+            <br />
+            <strong>zmieniono</strong>: %%updated_at%%
+            <br />
+            %%active%%
+          </div>
+      filter:  ~
+      form:
+        fields:
+          title:
+            attributes: { size: 80 }
+          text:
+            attributes: { cols: 80, rows: 10 }
+      edit:
+        title: Edit article
+      new:
+        title: New article

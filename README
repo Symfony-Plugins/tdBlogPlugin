@@ -1,0 +1,76 @@
+tdCorePlugin
+============
+
+The `tdVisitorCounterPlugin` is a symfony plugin that provides basic
+functionalities enabling TD CMF, such as common configuration or random data
+generation.
+
+This plugin is a part of __TD CMF__ and is based on __Doctrine ORM__.
+
+Installation
+============
+
+Install the plugin via the subversion repository by executing the following
+command from the project root directory:
+
+    $ svn co http://svn.symfony-project.com/plugins/tdCorePlugin/trunk plugins/tdCorePlugin
+
+or by using the default symfony plugin install command:
+
+    $ ./symfony plugin:install -s beta tdCorePlugin
+
+as the actual release is in its beta stage. Run the following command to enable
+the assets of tdCorePlugin:
+
+    $ ./symfony plugin:publish-assets
+
+Usage
+=====
+
+  * This plugin is the main part of the __TD CMF__ and therefore it should be
+    installed as the first one. Other td components will use functionalities
+    provided with tdCorePlugin.
+
+  * Add __/tdCorePlugin/css/td_core_icons.css__ to your backend/config/view.yml
+    in the css section array to enable admin generator icons.
+
+sfAdminDashPlugin compatibility
+===============================
+
+The icons provided with the plugin may be used for sfAdminDashPlugin. To do so,
+you need to do the following:
+
+  * modify the __sfAdminDashPlugin/config/app.yml__ file, set:
+
+        [php]
+        image_dir: /tdCorePlugin/images/icons/
+
+  * and finally you may use the icons in the app.yml file:
+
+        [php]
+        categories:
+          Administration:
+            items:
+              Newsletter:
+                url: newsletter
+                image: newsletter.png
+
+Random Data Generator
+=====================
+
+There is a class in the plugin responsible for generating some random data used
+for the symfony fixtures. During development phase its essential to see how some
+mechanisms work when real data is available in the database. Writing the same
+methods many times is useless - that's where random data generator comes in. an
+example to generate some data in _data/fixtures/sample.yml_ file is shown below:
+
+    [php]
+    <?php $generator = new tdRandomDataGenerator(); ?>
+    Guestbook:
+    <?php for($i = 0; $i < 150; $i++): ?>
+      guestbook_<?php echo $i ?>:
+        author: <?php echo $generator->getRandomName()."\n" ?>
+        email: <?php echo $generator->getRandomEmail()."\n" ?>
+        http: <?php echo $generator->getRandomHttp()."\n" ?>
+        text: <?php echo $generator->getRandomText(mt_rand(20,100)*mt_rand(1,5))."\n" ?>
+    <?php endfor; ?>
