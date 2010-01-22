@@ -32,7 +32,7 @@
                             <div class="modifydate">
                                 Ostatnia data aktualizacji (<?php echo (false !== strtotime($article['updated_at']) ? format_date($article['updated_at'], "f") : '&nbsp;') ?>)
                             </div>
-                            <div class="readmore">
+                            <div class="special">
                               <?php if($mode == 'multi'): ?>
                                 <?php echo link_to('Czytaj więcej...', '@article?id='.$article['id'], array('class' => 'readon')) ?>
                               <?php else: ?>

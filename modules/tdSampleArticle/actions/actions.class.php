@@ -17,7 +17,9 @@ class tdSampleArticleActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    $this->articles = Doctrine::getTable('tdArticle')->getRecentArticlesWithAuthorsQuery()->fetchArray();
+    $this->articles = Doctrine::getTable('tdArticle')
+      ->getArticlesWithAuthorsQuery(sfConfig::get('td_blog_recent_articles_count'))
+      ->fetchArray();
   }
 
  /**

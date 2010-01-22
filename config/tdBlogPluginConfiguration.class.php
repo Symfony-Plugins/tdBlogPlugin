@@ -20,6 +20,9 @@ class tdBlogPluginConfiguration extends sfPluginConfiguration
     // blog short text sign count
     sfConfig::set('td_blog_short_text_sign_count', 300);
 
+    // blog recent articles count
+    sfConfig::set('td_blog_recent_articles_count', 3);
+
     // article images upload dir
     sfConfig::set('td_blog_image_dir', sfConfig::get('sf_upload_dir').'/articles');
   }

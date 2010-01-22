@@ -8,17 +8,17 @@ class PlugintdArticleTable extends Doctrine_Table
    *
    * @return Doctrine_Query
    */
-  static public function getRecentArticlesWithAuthorsQuery()
+  static public function getArticlesWithAuthorsQuery($count)
   {
     $fields = 'a.id, a.text, a.title, a.image, a.created_at, a.updated_at, ';
     $fields .= 'CONCAT(p.first_name, " ", p.last_name) as author_name';
     return Doctrine_Query::create()
-             ->from('tdArticle a')
-             ->select($fields)
-             ->orderBy('a.created_at')
-             ->leftJoin('a.Author u')
-             ->leftJoin('u.Profile p')
-             ->limit(5);
+      ->from('tdArticle a')
+      ->select($fields)
+      ->orderBy('a.created_at')
+      ->leftJoin('a.Author u')
+      ->leftJoin('u.Profile p')
+      ->limit($count);
   }
 
   /**
@@ -32,11 +32,11 @@ class PlugintdArticleTable extends Doctrine_Table
     $fields = 'a.id, a.text, a.title, a.image, a.created_at, a.updated_at, ';
     $fields .= 'CONCAT(p.first_name, " ", p.last_name) as author_name';
     return Doctrine_Query::create()
-             ->from('tdArticle a')
-             ->select($fields)
-             ->where('a.id = ?', $id)
-             ->leftJoin('a.Author u')
-             ->leftJoin('u.Profile p');
+      ->from('tdArticle a')
+      ->select($fields)
+      ->where('a.id = ?', $id)
+      ->leftJoin('a.Author u')
+      ->leftJoin('u.Profile p');
   }
 
   /**
@@ -47,8 +47,8 @@ class PlugintdArticleTable extends Doctrine_Table
   static public function getActiveArticlesQuery()
   {
     return Doctrine_Query::create()
-             ->from('tdArticle a')
-             ->where('a.active = "1"');
+      ->from('tdArticle a')
+      ->where('a.active = "1"');
   }
 
   /**
@@ -60,7 +60,7 @@ class PlugintdArticleTable extends Doctrine_Table
   static public function getSelectedArticlesQuery($ids)
   {
     return Doctrine_Query::create()
-             ->from('tdArticle a')
-             ->whereIn('a.id', $ids);
+      ->from('tdArticle a')
+      ->whereIn('a.id', $ids);
   }
 }
