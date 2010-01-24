@@ -6,7 +6,7 @@
 /**
  * tdBlogPluginConfiguration
  *
- * @package   tdGuestbookPlugin
+ * @package   tdBlogPlugin
  * @author    Tomasz Ducin <tomasz.ducin@gmail.com>
  */
 

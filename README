@@ -1,9 +1,7 @@
-tdCorePlugin
+tdBlogPlugin
 ============
 
-The `tdVisitorCounterPlugin` is a symfony plugin that provides basic
-functionalities enabling TD CMF, such as common configuration or random data
-generation.
+The `tdBlogPlugin` provides basic blog functionalties.
 
 This plugin is a part of __TD CMF__ and is based on __Doctrine ORM__.
 
@@ -13,64 +11,65 @@ Installation
 Install the plugin via the subversion repository by executing the following
 command from the project root directory:
 
-    $ svn co http://svn.symfony-project.com/plugins/tdCorePlugin/trunk plugins/tdCorePlugin
+    $ svn co http://svn.symfony-project.com/plugins/tdBlogPlugin/trunk plugins/tdBlogPlugin
 
 or by using the default symfony plugin install command:
 
-    $ ./symfony plugin:install -s beta tdCorePlugin
+    $ ./symfony plugin:install -s beta tdBlogPlugin
 
-as the actual release is in its beta stage. Run the following command to enable
-the assets of tdCorePlugin:
-
-    $ ./symfony plugin:publish-assets
+as the actual release is in its beta stage.
 
 Usage
 =====
 
-  * This plugin is the main part of the __TD CMF__ and therefore it should be
-    installed as the first one. Other td components will use functionalities
-    provided with tdCorePlugin.
-
-  * Add __/tdCorePlugin/css/td_core_icons.css__ to your backend/config/view.yml
-    in the css section array to enable admin generator icons.
-
-sfAdminDashPlugin compatibility
-===============================
-
-The icons provided with the plugin may be used for sfAdminDashPlugin. To do so,
-you need to do the following:
-
-  * modify the __sfAdminDashPlugin/config/app.yml__ file, set:
+  * Enable the __tdSampleArticle__ module in your frontend application's
+    _config/settings.yml_ enabled_modules section:
 
         [php]
-        image_dir: /tdCorePlugin/images/icons/
+        enabled_modules: [ ..., tdSampleArticle ]
 
-  * and finally you may use the icons in the app.yml file:
+  * Fixtures are provided with the plugin - randomly generated data. Run the
+    following commands:
+
+        $ ./symfony doctrine:build --all
+
+    and
+
+        $ ./symfony doctrine:data-load
+
+    and run the following URL in your browser:
+
+        http://your-project/sample-article
+
+  * Enable the td_aticle admin generator in your backend application's
+    _config/settings.yml_ enabled_modules section:
 
         [php]
-        categories:
-          Administration:
-            items:
-              Newsletter:
-                url: newsletter
-                image: newsletter.png
+        enabled_modules: [ ..., td_article ]
 
-Random Data Generator
-=====================
+Configuration
+=============
 
-There is a class in the plugin responsible for generating some random data used
-for the symfony fixtures. During development phase its essential to see how some
-mechanisms work when real data is available in the database. Writing the same
-methods many times is useless - that's where random data generator comes in. an
-example to generate some data in _data/fixtures/sample.yml_ file is shown below:
+You can modify settings of the tdGuestbookPlugin in the
+__config/tdBlogPluginConfiguration.class.php__ file:
 
-    [php]
-    <?php $generator = new tdRandomDataGenerator(); ?>
-    Guestbook:
-    <?php for($i = 0; $i < 150; $i++): ?>
-      guestbook_<?php echo $i ?>:
-        author: <?php echo $generator->getRandomName()."\n" ?>
-        email: <?php echo $generator->getRandomEmail()."\n" ?>
-        http: <?php echo $generator->getRandomHttp()."\n" ?>
-        text: <?php echo $generator->getRandomText(mt_rand(20,100)*mt_rand(1,5))."\n" ?>
-    <?php endfor; ?>
+  * _td_blog_recent_articles_count_ - number of articles to be displayed in
+    _tdSampleArticle_ module.
+
+  * _td_blog_short_text_sign_count_ - character count of a short article
+    content version
+
+  * _td_blog_image_dir_ - upload directory for article thumbnails.
+
+Translations
+============
+
+You may translate tdSampleArticle module to your own language by creating
+__td.XX.xml__ file under _modules/tdSampleArticle/i18n_ directory (where XX is
+the language code). So far, English language is the default one and additionally
+Polish translationis provided.
+
+Dependencies
+============
+
+  * [tdCorePlugin](http://www.symfony-project.org/plugins/tdCorePlugin)

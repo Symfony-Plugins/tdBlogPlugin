@@ -3,9 +3,9 @@
 /**
  * PlugintdArticle form.
  *
- * @package    ##PROJECT_NAME##
+ * @package    tdBlogPlugin
  * @subpackage filter
- * @author     ##AUTHOR_NAME##
+ * @author     Tomasz Ducin <tomasz.ducin@gmail.com>
  * @version    SVN: $Id: sfDoctrineFormFilterPluginTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 abstract class PlugintdArticleFormFilter extends BasetdArticleFormFilter

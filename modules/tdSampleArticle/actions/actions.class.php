@@ -3,10 +3,10 @@
 /**
  * tdSampleArticle actions.
  *
- * @package    gospel
- * @subpackage article
- * @author     Tomasz Ducin
- * @version    SVN: $Id: actions.class.php 12479 2008-10-31 10:54:40Z fabien $
+ * @package    tdBlogPlugin
+ * @subpackage frontend
+ * @author     Tomasz Ducin <tomasz.ducin@gmail.com>
+ * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class tdSampleArticleActions extends sfActions
 {

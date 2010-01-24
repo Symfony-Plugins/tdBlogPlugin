@@ -6,9 +6,9 @@ require_once dirname(__FILE__).'/../lib/td_articleGeneratorHelper.class.php';
 /**
  * td_article actions.
  *
- * @package    gospel
- * @subpackage td_article
- * @author     Tomasz Ducin
+ * @package    tdBlogPlugin
+ * @subpackage backend
+ * @author     Tomasz Ducin <tomasz.ducin@gmail.com>
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
 class td_articleActions extends autoTd_articleActions
