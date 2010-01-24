@@ -24,6 +24,6 @@ class tdBlogPluginConfiguration extends sfPluginConfiguration
     sfConfig::set('td_blog_recent_articles_count', 3);
 
     // article images upload dir
-    sfConfig::set('td_blog_image_dir', sfConfig::get('sf_upload_dir').'/articles');
+    sfConfig::set('td_blog_upload_dir', sfConfig::get('sf_upload_dir').'/uploads/td/blog');
   }
 }

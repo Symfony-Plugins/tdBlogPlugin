@@ -32,7 +32,7 @@ abstract class PlugintdArticleForm extends BasetdArticleForm
       'with_delete' => false,
       'delete_label' => 'usuń miniaturkę',
       'label'     => 'Miniaturka artykułu',
-      'file_src'  => '/uploads/articles/'.$this->getObject()->getImage(),
+      'file_src'  => '/uploads/td/blog/'.$this->getObject()->getImage(),
       'is_image'  => true,
       'edit_mode' => !$this->isNew(),
       'template'  => '%file%<br />%input%<br />%delete% %delete_label%',
@@ -46,7 +46,7 @@ abstract class PlugintdArticleForm extends BasetdArticleForm
 
     $this->setValidator('image', new sfValidatorFile(array(
       'required'   => true,
-      'path'       => sfConfig::get('td_blog_image_dir'),
+      'path'       => sfConfig::get('td_blog_upload_dir'),
       'mime_types' => 'web_images',
     ), array(
       'required' => 'Musisz wybrać plik',

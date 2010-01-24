@@ -5,7 +5,7 @@ tdArticle:
     title: <?php echo $generator->getRandomText(mt_rand(15, 80))."\n" ?>
     Author: kmatysek
     text: <?php echo $generator->getRandomText(mt_rand(200, 2500))."\n" ?>
-    image: sample.jpg
+    image: sample<?php echo $i % 2 ?>.jpg
     active: <?php echo (mt_rand(0,4) == 0 ? 'false' : 'true')."\n" ?>
     created_at: <?php echo $generator->getRandomCreatedAt(2009 + mt_rand(0,1))."\n" ?>
     updated_at: <?php echo $generator->getRandomCreatedAt(2009 + mt_rand(0,1))."\n" ?>

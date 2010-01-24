@@ -27,7 +27,7 @@
                 <tbody>
                     <tr>
                         <td colspan="2" class="article_indent" valign="top">
-                            <?php echo image_tag('/uploads/articles/'.$article['image'], array('align' => 'left', 'border' => 0)) ?>
+                            <?php echo image_tag('/uploads/td/blog/'.$article['image'], array('align' => 'left', 'border' => 0)) ?>
                             <p><?php echo ($mode == 'multi' ? mb_substr($article['text'], 0, 500).'...' : $article['text']) ?><p>
                             <div class="modifydate">
                                 Ostatnia data aktualizacji (<?php echo (false !== strtotime($article['updated_at']) ? format_date($article['updated_at'], "f") : '&nbsp;') ?>)
