@@ -24,7 +24,7 @@ class PlugintdArticleTable extends Doctrine_Table
     return Doctrine_Query::create()
       ->from('tdArticle a')
       ->select($fields)
-      ->orderBy('a.created_at')
+      ->orderBy('a.created_at DESC')
       ->leftJoin('a.Author u')
       ->leftJoin('u.Profile p')
       ->limit($count);
