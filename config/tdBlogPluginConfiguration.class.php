@@ -17,9 +17,6 @@ class tdBlogPluginConfiguration extends sfPluginConfiguration
    */
   public function initialize()
   {
-    // blog short text sign count
-    sfConfig::set('td_blog_short_text_sign_count', 300);
-
     // blog recent articles count
     sfConfig::set('td_blog_recent_articles_count', 3);
 

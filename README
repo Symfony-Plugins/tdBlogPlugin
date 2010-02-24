@@ -66,9 +66,6 @@ __config/tdBlogPluginConfiguration.class.php__ file:
   * _td_blog_recent_articles_count_ - number of articles to be displayed in
     _tdSampleArticle_ module.
 
-  * _td_blog_short_text_sign_count_ - character count of a short article
-    content version
-
   * _td_blog_upload_dir_ - upload directory for article thumbnails.
 
 Translations
