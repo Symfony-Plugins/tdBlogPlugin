@@ -10,7 +10,7 @@ tdArticle:
       type: string(128)
       notnull: true
     author_id:
-      type: integer(4)
+      type: integer(5)
       notnull: true
     text:
       type: clob

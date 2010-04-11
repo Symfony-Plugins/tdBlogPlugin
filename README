@@ -80,3 +80,5 @@ Dependencies
 ============
 
   * [tdCorePlugin](http://www.symfony-project.org/plugins/tdCorePlugin)
+
+  * [sfDoctrineGuardPlugin](http://www.symfony-project.org/plugins/sfDoctrineGuardPlugin)
