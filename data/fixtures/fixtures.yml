@@ -3,7 +3,7 @@ tdArticle:
 <?php for($i = 0; $i < 50; $i++): ?>
   article_<?php echo $i ?>:
     title: <?php echo $generator->getRandomText(mt_rand(15, 80))."\n" ?>
-    Author: kmatysek
+    Author: someone
     text: <?php echo $generator->getRandomText(mt_rand(200, 2500))."\n" ?>
     image: sample<?php echo ($i % 2)+1 ?>.jpg
     active: <?php echo (mt_rand(0,4) == 0 ? 'false' : 'true')."\n" ?>
