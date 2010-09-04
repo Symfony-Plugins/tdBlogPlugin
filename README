@@ -57,6 +57,13 @@ Usage
         [php]
         enabled_modules: [ ..., td_article ]
 
+  * To use the activate/deactivate AJAX interface in the backend td_article
+    module, remember to enable the __graphics__ module of the __tdCorePlugin__
+    inside your settings.yml file (see tdCorePlugin README).
+
+        [php]
+        enabled_modules: [ ..., graphics ]
+
 Configuration
 =============
 

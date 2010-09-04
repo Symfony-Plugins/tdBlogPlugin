@@ -53,33 +53,29 @@ class td_articleActions extends autoTd_articleActions
         $this->redirect('@td_article');
     }
 
-    /**
-     * Activates selected article.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListActivate(sfWebRequest $request)
-    {
-        $article = $this->getRoute()->getObject();
-        $article->activate();
+  /**
+   * Activates an article from admin generator list using AJAX.
+   *
+   * @param sfWebRequest $request
+   * @return Partial - generated partial enabling article deactivating (switch).
+   */
+  public function executeActivate(sfWebRequest $request)
+  {
+    $article = Doctrine::getTable('tdArticle')->findOneById($request->getParameter('id'));
+    $article->activate();
+    return $this->renderPartial('td_article/ajax_deactivate', array('td_article' => $article));
+  }
 
-        $this->getUser()->setFlash('notice', 'The selected article has been activated successfully.');
-
-        $this->redirect('@td_article');
-    }
-
-    /**
-     * Deactivates selected article.
-     *
-     * @param sfWebRequest $request
-     */
-    public function executeListDeactivate(sfWebRequest $request)
-    {
-        $article = $this->getRoute()->getObject();
-        $article->deactivate();
-
-        $this->getUser()->setFlash('notice', 'The selected article has been deactivated successfully.');
-
-        $this->redirect('@td_article');
-    }
+  /**
+   * Deactivates an article from admin generator list using AJAX.
+   *
+   * @param sfWebRequest $request
+   * @return Partial - generated partial enabling article activating (switch).
+   */
+  public function executeDeactivate(sfWebRequest $request)
+  {
+    $article = Doctrine::getTable('tdArticle')->findOneById($request->getParameter('id'));
+    $article->deactivate();
+    return $this->renderPartial('td_article/ajax_activate', array('td_article' => $article));
+  }
 }

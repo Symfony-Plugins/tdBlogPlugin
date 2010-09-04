@@ -2,6 +2,20 @@ td_sample_aticle:
   url:   /sample-article
   param: { module: tdSampleArticle, action: index }
 
+# ajax actions
+
+ajax_article_activate:
+  url:   /ajax-article-activate/:id
+  param: { module: td_article, action: activate }
+  requirements:
+    id: \d+
+
+ajax_article_deactivate:
+  url:   /ajax-article-deactivate/:id
+  param: { module: td_article, action: deactivate }
+  requirements:
+    id: \d+
+
 td_article:
   class: sfDoctrineRouteCollection
   options:
