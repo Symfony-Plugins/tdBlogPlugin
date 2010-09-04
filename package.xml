@@ -13,80 +13,80 @@
   <date>2010-09-04</date>
   <time>11:00:00</time>
   <version>
-    <release>0.1.6/release>
-      <api>0.1.0</api>
-    </version>
-    <stability>
-      <release>beta</release>
-      <api>beta</api>
-    </stability>
-    <license uri="http://www.symfony-project.com/license">MIT</license>
-    <notes>-</notes>
+    <release>0.1.6</release>
+    <api>0.1.0</api>
+  </version>
+  <stability>
+    <release>beta</release>
+    <api>beta</api>
+  </stability>
+  <license uri="http://www.symfony-project.com/license">MIT</license>
+  <notes>-</notes>
 
-    <contents>
-      <dir name="/">
+  <contents>
+    <dir name="/">
 
-        <dir name="config">
+      <dir name="config">
+        <dir name="doctrine">
+          <file name="schema.yml" role="data" />
+        </dir>
+        <file name="routing.yml" role="data" />
+        <file name="tdBlogPluginConfiguration.class.php" role="data" />
+      </dir>
+
+      <dir name="data">
+        <dir name="fixtures">
+          <file name="fixtures.yml" role="data" />
+        </dir>
+        <dir name="samples">
+          <file name="sample1.jpg" role="data" />
+          <file name="sample2.jpg" role="data" />
+        </dir>
+      </dir>
+
+      <dir name="lib">
+        <dir name="filter">
           <dir name="doctrine">
-            <file name="schema.yml" role="data" />
-          </dir>
-          <file name="routing.yml" role="data" />
-          <file name="tdBlogPluginConfiguration.class.php" role="data" />
-        </dir>
-
-        <dir name="data">
-          <dir name="fixtures">
-            <file name="fixtures.yml" role="data" />
-          </dir>
-          <dir name="samples">
-            <file name="sample1.jpg" role="data" />
-            <file name="sample2.jpg" role="data" />
+            <file name="PlugintdArticleFormFilter.class.php" role="data" />
           </dir>
         </dir>
-
-        <dir name="lib">
-          <dir name="filter">
-            <dir name="doctrine">
-              <file name="PlugintdArticleFormFilter.class.php" role="data" />
-            </dir>
-          </dir>
-          <dir name="form">
-            <dir name="doctrine">
-              <file name="PlugintdArticleForm.class.php" role="data" />
-            </dir>
-          </dir>
-          <dir name="model">
-            <dir name="doctrine">
-              <file name="PlugintdArticle.class.php" role="data" />
-              <file name="PlugintdArticleTable.class.php" role="data" />
-            </dir>
+        <dir name="form">
+          <dir name="doctrine">
+            <file name="PlugintdArticleForm.class.php" role="data" />
           </dir>
         </dir>
-
-        <dir name="modules">
-          <dir name="td_article">
-            <dir name="actions">
-              <file name="actions.class.php" role="data" />
-            </dir>
-            <dir name="config">
-              <file name="generator.yml" role="data" />
-            </dir>
-            <dir name="i18n">
-              <file name="sf_admin.pl.xml" role="data" />
-            </dir>
-            <dir name="lib">
-              <file name="td_articleGeneratorConfiguration.class.php" role="data" />
-              <file name="td_articleGeneratorHelper.class.php" role="data" />
-            </dir>
-            <dir name="templates">
-              <file name="_ajax_activate.php" role="data" />
-              <file name="_ajax_deactivate.php" role="data" />
-              <file name="_ajax_main_active.php" role="data" />
-              <file name="_list_td_actions.php" role="data" />
-              <file name="_list_td_stacked.php" role="data" />
-              <file name="_list_td_tabular.php" role="data" />
-            <dir/>
+        <dir name="model">
+          <dir name="doctrine">
+            <file name="PlugintdArticle.class.php" role="data" />
+            <file name="PlugintdArticleTable.class.php" role="data" />
           </dir>
+        </dir>
+      </dir>
+
+      <dir name="modules">
+        <dir name="td_article">
+          <dir name="actions">
+            <file name="actions.class.php" role="data" />
+          </dir>
+          <dir name="config">
+            <file name="generator.yml" role="data" />
+          </dir>
+          <dir name="i18n">
+            <file name="sf_admin.pl.xml" role="data" />
+          </dir>
+          <dir name="lib">
+            <file name="td_articleGeneratorConfiguration.class.php" role="data" />
+            <file name="td_articleGeneratorHelper.class.php" role="data" />
+          </dir>
+          <dir name="templates">
+            <file name="_ajax_activate.php" role="data" />
+            <file name="_ajax_deactivate.php" role="data" />
+            <file name="_ajax_main_active.php" role="data" />
+            <file name="_list_td_actions.php" role="data" />
+            <file name="_list_td_stacked.php" role="data" />
+            <file name="_list_td_tabular.php" role="data" />
+          </dir>
+        </dir>
           <dir name="tdSampleArticle">
             <dir name="actions">
               <file name="actions.class.php" role="data" />
@@ -140,22 +140,22 @@
 
     <changelog>
 
-    <release>
-      <version>
-        <release>0.1.6</release>
-        <api>0.1.0</api>
-      </version>
-      <stability>
-        <release>beta</release>
-        <api>beta</api>
-      </stability>
-      <license uri="http://www.symfony-project.org/license">MIT license</license>
-      <date>2010-09-04</date>
-      <license>MIT</license>
-      <notes>
+      <release>
+        <version>
+          <release>0.1.6</release>
+          <api>0.1.0</api>
+        </version>
+        <stability>
+          <release>beta</release>
+          <api>beta</api>
+        </stability>
+        <license uri="http://www.symfony-project.org/license">MIT license</license>
+        <date>2010-09-04</date>
+        <license>MIT</license>
+        <notes>
         * added backend module AJAX activate/deactivate interface
-      </notes>
-    </release>
+        </notes>
+      </release>
 
       <release>
         <version>
